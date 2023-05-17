@@ -7,21 +7,19 @@ import sst.Response;
 public class Client {
 
 	public void getResponse(String url){
-		int field[];
+
 	
 		try {
-			// RMI Proxy-Objekt erzeugen
-			Response proxy = (Response) Naming.lookup(url);
+			Response stub = (Response) Naming.lookup(url);
 			String erg = getEingabe();
+
 			if (erg.equals("Hello")) {
-				System.out.print(proxy.Hello());
+				System.out.print(stub.Hello());
 			} else if (erg.equals("Bye")) {
-				System.out.print(proxy.Bye());
-			} else if (erg.equals("Show array")) {
-					field = proxy.giveAnswer4();
-					for(int i = 0; i<field.length; i++){
-						System.out.print(field[i]+" ");
-					}
+				System.out.print(stub.Bye());
+			} else if (erg.equals("How are you?")) {
+				System.out.print(stub.Question());	
+					
 			} else {
 				System.out.print("Fehler");
 			}
@@ -34,7 +32,7 @@ public class Client {
 
 	public String getEingabe() {
 
-		final String[] dropdown = {"Hello", "Bye", "Show array"};
+		final String[] dropdown = {"Hello", "Bye", "How are you?"};
 		return (String) JOptionPane.showInputDialog(null, "Input",
 				"ChatGPT 2.0", JOptionPane.QUESTION_MESSAGE, null, dropdown,
 				dropdown[0]);

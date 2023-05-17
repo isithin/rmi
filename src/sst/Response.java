@@ -10,6 +10,6 @@ public interface Response extends Remote{
 	
 	public String Bye() throws RemoteException;
 	
-	public int[] giveAnswer4() throws RemoteException;
+	public String Question() throws RemoteException;
 
 }
