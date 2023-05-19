@@ -5,6 +5,9 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.net.InetAddress;
 
+//Configure firewall before running!
+//Check if IP.getHostAddress gets the right interface!
+
 public class RunServer {
 
 	public static void main(String[] args) {
