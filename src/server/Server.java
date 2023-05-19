@@ -1,8 +1,9 @@
 package server;
 
-import sst.Response;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+
+import interfaces.Response;
 
 public class Server extends UnicastRemoteObject implements Response{
 

@@ -2,7 +2,8 @@ package client;
 
 import java.rmi.Naming;
 import javax.swing.JOptionPane;
-import sst.Response;
+
+import interfaces.Response;
 
 public class Client {
 
